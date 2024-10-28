@@ -17,17 +17,23 @@ export function Calculator() {
     subtractOperation,
     sumOperation,
     calculateResult,
+    formula,
   } = useCalculator();
 
   return (
     <View style={styles.calculatorContainer}>
       <View style={{paddingHorizontal: 30, paddingBottom: 20}}>
         <Text style={styles.mainResult} adjustsFontSizeToFit numberOfLines={1}>
-          {number}
+          {formula}
         </Text>
-        <Text style={styles.subResult} adjustsFontSizeToFit numberOfLines={1}>
-          {prevNumber === '0' ? '' : prevNumber}
-        </Text>
+
+        {formula === prevNumber ? (
+          <Text style={styles.subResult}></Text>
+        ) : (
+          <Text style={styles.subResult} adjustsFontSizeToFit numberOfLines={1}>
+            {prevNumber}
+          </Text>
+        )}
       </View>
 
       <View style={styles.row}>
