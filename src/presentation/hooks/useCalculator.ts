@@ -12,6 +12,7 @@ export function useCalculator() {
   const [prevNumber, setprevNumber] = useState('0');
 
   const lastOperation = useRef<Operator>();
+  console.log('test');
 
   const buildNumber = (numberString: string) => {
     if (number.includes('.') && numberString === '.') return;
